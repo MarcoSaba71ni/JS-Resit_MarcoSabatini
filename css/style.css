@@ -26,3 +26,27 @@ header a {
     justify-content: center;
     text-align: center;
 }
+
+.game-canvas {
+    display: flex;
+    flex-direction: column;
+}
+
+.cta_button {
+    width: auto;
+    background-color: brown;
+    color: white;
+}
+
+.game-canvas img {
+    width: 300px;
+    height: auto;
+}
+
+.display-content {
+    display: flex;
+    gap: 50px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}

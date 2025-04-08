@@ -4,16 +4,16 @@ const displayProducts = document.getElementById('display-products');
 
 async function fetchAllProducts() {
     try {
-        const response = await fetch("https://v2.api.noroff.dev/rainy-days");
+        const response = await fetch("https://v2.api.noroff.dev/gamehub");
         if (!response.ok) {
-            throw new Error ("can't fetch")
+            throw new Error ("Can't fetch")
         };
         const data = await response.json();
         console.log(data);
         const allGames = data.data;
 
 
-        allGames.slice(0,5).forEach(game=> {
+        allGames.forEach(game=> {
             generateGame(game);
         });
     } catch (error) {
@@ -27,6 +27,7 @@ fetchAllProducts();
 
 function generateGame (game) {
     const gameContainer = document.createElement('div');
+    gameContainer.className = 'game-canvas';
 
     const gameHeading = document.createElement('h2')
     gameHeading.textContent= `${game.title}`;
@@ -39,5 +40,13 @@ function generateGame (game) {
     gameContainer.appendChild(gameHeading);
     gameContainer.appendChild(gameImage);
     
+    const addToCartBtn = document.createElement('button');
+    addToCartBtn.textContent = 'Add to Cart';
+    addToCartBtn.classList = 'cta_button';
+    const checkOutBtn = document.createElement('button');
+    checkOutBtn.textContent = 'Buy it';
+
+    gameContainer.appendChild(addToCartBtn);
+    gameContainer.appendChild(checkOutBtn);
 
 }
