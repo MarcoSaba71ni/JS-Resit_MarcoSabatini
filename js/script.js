@@ -1,18 +1,26 @@
-const displayProducts = document.getElementById('display-products');^
+const displayProducts = document.getElementById('display-products');
 
 // Fetch function 
 
 async function fetchAllProducts() {
-    const displayProducts = document.getElementById('display-products');
+    try {
+        const response = await fetch("https://v2.api.noroff.dev/rainy-days");
+        if (!response.ok) {
+            throw new Error ("can't fetch")
+        };
+        const data = await response.json();
+        console.log(data);
+        const allGames = data.data;
+
+
+        allGames.slice(0,5).forEach(game=> {
+            generateGame(game);
+        });
+    } catch (error) {
+        console.log("Error fetching products");
+    }
     
-    const response = await fetch("https://docs.noroff.dev/docs/v2/e-commerce/gamehub");
-    const data = await response.json();
-    const allGames = data.data;
-
-
-    allGames.forEach(game=> {
-        generateGame(game);
-    });
+    
 }
 
 fetchAllProducts();
