@@ -30,12 +30,18 @@ header a {
 .game-canvas {
     display: flex;
     flex-direction: column;
+    gap: 15px;
 }
 
 .cta_button {
-    width: auto;
+    width: 90px;
     background-color: brown;
     color: white;
+}
+
+.cta_button:hover {
+    background-color:azure;
+    color: brown;
 }
 
 .game-canvas img {
@@ -49,4 +55,23 @@ header a {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+/* product page */
+
+.individual-canvas {
+    padding-left: 25%;
+    padding-top: 30px;
+}
+
+.sing-game-canvas {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.sing-game-canvas img {
+    width: 440px;
+    height: auto;
 }
