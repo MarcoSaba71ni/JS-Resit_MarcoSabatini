@@ -45,9 +45,10 @@ function createSingleGame (game) {
     const addToCart = document.createElement('button');
     addToCart.textContent = "Add to Cart";
     addToCart.className = "cta_button";
-
-
-
+    addToCart.addEventListener("click", () => {   
+        addItemToCart(game);
+        window.location.href = "my-cart.html";
+    });
 
     individualContent.appendChild(singGameContent);
     singGameContent.appendChild(singGameHeading);
@@ -55,7 +56,12 @@ function createSingleGame (game) {
     singGameContent.appendChild(singGameDescrip);
     singGameContent.appendChild(singGamePrice);
     singGameContent.appendChild(addToCart);
+}
+
+async function addItemToCart (game) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push(game);
+    localStorage.setItem('cart', JSON.stringify(cart));
 
 
 }
-

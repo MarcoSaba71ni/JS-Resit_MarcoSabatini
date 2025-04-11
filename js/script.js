@@ -134,6 +134,10 @@ let writing = searchBar.value;
      const addToCartBtn = document.createElement('button');
      addToCartBtn.textContent = 'Add to Cart';
      addToCartBtn.className = 'cta_button';
+     addToCartBtn.addEventListener("click", () => {
+        addItemToCart(game);
+        window.location.href = "my-cart.html";
+    });
  
      const checkOutBtn = document.createElement('a');
      checkOutBtn.textContent = 'View Game';
@@ -148,3 +152,9 @@ let writing = searchBar.value;
      displayProducts.appendChild(gameContainer);
  }
  
+ async function addItemToCart (game) {
+    let cart = JSON.parse(localStorage.getItem('cart') || []);
+    cart.push(game);
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+ }
