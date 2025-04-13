@@ -88,7 +88,44 @@ header a {
     height: auto;
 }
 
-.contact-content {
+.checkout-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 30px;
+    padding-top: 30px;
+}
 
+.contact-input {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    gap: 20px;
+    width: 250px;
+}
+
+.contact-info {
+    background-color: lightgray;
+    border-radius: 10px;
+    width: 400px;
+    height: 300px;
+    padding-left: 25px;
+}
+
+.confirmation {
+    padding-top: 50px;
+    justify-content: center;
+}
+
+.total {
+    background-color: lightgray;
+    border-radius: 10px;
+    width: 250px;
+    padding-left: 25px;
+}
+
+.image-total {
+    width: 200px;
+    height: auto;
 }
