@@ -62,6 +62,13 @@ async function addItemToCart (game) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     cart.push(game);
     localStorage.setItem('cart', JSON.stringify(cart));
-
-
 }
+
+function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart') || []);
+    const cartCount = document.getElementById('cart-count');
+
+    cartCount.textContent = cart.length;
+ }
+
+ updateCartCount();

@@ -30,10 +30,34 @@ function generateCart(game) {
     const gamePrice = document.createElement('p');
     gamePrice.textContent = `Price: $${game.price}`;
 
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = "Delete";
+    deleteBtn.className = "cta_button";
+    deleteBtn.addEventListener('click', () => {
+        deleteItem(game.id);
+    })
+
+
     cartItems.appendChild(gameCart);
     gameCart.appendChild(imgCart);
     gameCart.appendChild(gameDescription);
     gameDescription.appendChild(cartHeading);
     gameDescription.appendChild(gamePrice);
+    gameDescription.appendChild(deleteBtn);
 
 }
+
+function deleteItem(id) {
+    cart = cart.filter(item => item.id !== id);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    location.reload(); 
+  }
+
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart') || []);
+    const cartCount = document.getElementById('cart-count');
+
+    cartCount.textContent = cart.length;
+ }
+
+ updateCartCount();

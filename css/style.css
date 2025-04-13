@@ -75,3 +75,20 @@ header a {
     width: 440px;
     height: auto;
 }
+
+.game-cart {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    padding: 0 0 30px 30px;
+}
+
+.game-cart img {
+    width: 350px;
+    height: auto;
+}
+
+.contact-content {
+    justify-content: center;
+
+}
