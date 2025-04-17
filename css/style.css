@@ -130,3 +130,14 @@ header a {
     width: 100px;
     height: auto;
 }
+
+.confirmation-content {
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    background: lightslategray;
+    width: 600px;
+    height: 250px;
+    left: 10%;
+}
+
