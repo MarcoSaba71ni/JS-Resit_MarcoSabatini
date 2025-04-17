@@ -116,6 +116,7 @@ header a {
 .confirmation {
     padding-top: 50px;
     justify-content: center;
+    text-align: center;
 }
 
 .total {
@@ -126,6 +127,6 @@ header a {
 }
 
 .image-total {
-    width: 200px;
+    width: 100px;
     height: auto;
 }
