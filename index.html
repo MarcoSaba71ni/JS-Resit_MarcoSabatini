@@ -38,6 +38,37 @@
                 <h1>Your favourite GameHub</h1>
                 <input type="text" id="search-bar" placeholder="Write the Game's name">
                 <button class="submitButton">Enter</button>
+                <div class="filters">
+                    <h3>Filter By</h3>
+                  
+                    <label for="gender-filter">Gender:</label>
+                    <select id="gender-filter">
+                      <option value="">All</option>
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                      <option value="unisex">Unisex</option>
+                    </select>
+                  
+                    <label for="genre-filter">Genre:</label>
+                    <select id="genre-filter">
+                      <option value="">All</option>
+                      <option value="adventure">Adventure</option>
+                      <option value="shooter">Action</option>
+                      <option value="horror">Horror</option>
+                      <option value="sports">Sports</option>
+                      <!-- Add more genres based on your API data -->
+                    </select>
+                  
+                    <label>
+                      <input type="checkbox" id="on-sale-filter" />
+                      On Sale
+                    </label>
+                    <label>
+                        <input type="checkbox" id="eighteen-plus"/>
+                        +18
+                    </label>
+                </div>
+                  
             </div>
             <div class="display-content" id="display-products">
                 <!-- Display products-->
