@@ -37,10 +37,13 @@
                 <div class="contact-info">
                     <h2>Contact</h2>
                     <div class="contact-input">
-                        <input type="text" placeholder="Full Name">
-                        <input type="text" placeholder="Surname">
-                        <input type="text" placeholder="Email">
-                        <input type="number" placeholder="Phone Number">
+                        <input type="text" id="full-name" placeholder="Full Name">
+                        <input type="text" id="surname" placeholder="Surname">
+                        <input type="text" id="email" placeholder="Email">
+                        <input type="number" id="phone-number" placeholder="Phone Number">
+                        <input type="number" id="card-number" placeholder="Card Number">
+                   
+                        <button onclick="cleanInputs()" class="cta_button">Save</button>
                     </div>
                 </div>
                 <div class="total">
@@ -54,7 +57,7 @@
         </main>
         <nav>
             <div class="confirmation">
-                <button class="cta_button">Confirm Purchase</button>
+                <button id="confirm-button" class="cta_button">Confirm Purchase</button>
             </div>
           
         </nav>

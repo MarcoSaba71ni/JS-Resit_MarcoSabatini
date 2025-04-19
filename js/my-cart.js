@@ -4,14 +4,39 @@ let cart = JSON.parse(localStorage.getItem('cart') || []);
 
 cartItems.innerHTML = "";
 
-if (cart.lenght = 0) {
-    cartItems.innerHTML = "<p>Your cart is empty.</p>";
-    alert('Go Back To Menu');
+if (cart.length === 0) {
+    cartItems.innerHTML= "<p>Your cart is empty.</p>";
+    alert('Go Back To The Home Page');
+
 } else {
     cart.forEach(game => {
     generateCart(game);        
     });
 }
+// Only shown when cart has items
+const checkOutSection = document.createElement('div');
+checkOutSection.className = "check-out-section";
+
+const checkOutBtn = document.createElement('a');
+checkOutBtn.textContent = "Go to Checkout";
+checkOutBtn.className = "cta_button";
+checkOutBtn.href = 'check-out.html';
+
+const keepShopSection = document.createElement('div');
+keepShopSection.className = "keep-shop-section";
+
+const keepShopping = document.createElement('a');
+keepShopping.textContent = 'Keep Shopping';
+keepShopping.className = "cta_button";
+keepShopping.href = 'index.html';
+
+checkOutSection.appendChild(checkOutBtn);
+keepShopSection.appendChild(keepShopping);
+
+cartItems.appendChild(checkOutSection);
+cartItems.appendChild(keepShopSection);
+
+
 
 function generateCart(game) {
     const gameCart = document.createElement('div');
@@ -37,14 +62,28 @@ function generateCart(game) {
         deleteItem(game.id);
     })
 
+    const checkOutSection = document.createElement('div');
+    checkOutSection.className = "check-out-section";
 
+    const checkOutBtn = document.createElement('a');
+    checkOutBtn.textContent = "Go to CheckOut";
+    checkOutBtn.className = "cta_button";
+    checkOutBtn.href = 'check-out.html';
+
+    const keepShopSection = document.createElement('div');
+    keepShopSection.className = "keep-shop-section";
+    const keepShopping = document.createElement('a');
+    keepShopping.textContent = 'Keep Shopping';
+    keepShopping.className = "cta_button";
+    keepShopping.href = 'index.html';
+
+    
     cartItems.appendChild(gameCart);
     gameCart.appendChild(imgCart);
     gameCart.appendChild(gameDescription);
     gameDescription.appendChild(cartHeading);
     gameDescription.appendChild(gamePrice);
     gameDescription.appendChild(deleteBtn);
-
 }
 
 function deleteItem(id) {
